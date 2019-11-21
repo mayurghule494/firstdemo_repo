@@ -15,12 +15,12 @@
         </style>
     </head>
     <body bgcolor="black">
-    <h1><center><font color ="chocolate">HAPPY BIRTHDAY KEERTHI</font></center></h1>
+    <h1><center><font color ="chocolate">HAPPY BIRTHDAY KITTU</font></center></h1>
     <canvas></canvas>
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    
+
     <script type ="text/javascript">
-        
+
         $(function(){
             var c= document.querySelector('canvas'),
             ctx=c.getContext('2d'),
@@ -52,7 +52,7 @@
                 this.path=[];
                 this.colour=colour;
                 this.r=particleRadius;
-                
+
                 this.update=function(){
                     this.life--;
                     if(this.path.length>=trailLength)
@@ -76,7 +76,7 @@
                     ctx.lineTo(this.x+this.r,this.y);
                     ctx.closePath();
                     ctx.fill();
-                    
+
                     ctx.fillStyle ='rgba('+this.colour +opacity+')';
                     if(this.life>LIFE*0.95)
                     ctx.fillStyle ='#00ff00';
@@ -86,7 +86,7 @@
                     ctx.closePath ();
                 }
             }
-            
+
             var Firework=function(){
                 this.x=width*(Math.random()*0.8+0.1);
 this.y=height*(Math.random()*0.8+0.1);
@@ -95,7 +95,7 @@ this.colour=~(Math.random()*255)+','+(Math.random()*255)+','+~(Math.random()*255
             this.life=0;
             this.particles=(function (x,y,strength ,colour){
                 var p=[];
-                
+
                 var n=~~(Math.random ()*(maxTrails - minTrails ))+minTrails;
                 var ay=g;
                 for(var i=n;i--;)
@@ -161,7 +161,7 @@ this.colour=~(Math.random()*255)+','+(Math.random()*255)+','+~(Math.random()*255
                 fw6=new Firework;
                 fw8=new Firework;
                 }
-                
+
                 if(fw2.life==LIFE*delay)
                 {
                 fw1=new Firework;
@@ -172,8 +172,8 @@ this.colour=~(Math.random()*255)+','+(Math.random()*255)+','+~(Math.random()*255
                 fw5=new Firework ;
                 fw7=new Firework;
                 }
-                
-                
+
+
                 window.requestAnimationFrame(main);
             }
             function init(){
@@ -189,10 +189,10 @@ this.colour=~(Math.random()*255)+','+(Math.random()*255)+','+~(Math.random()*255
                 fw4.life=-LIFE*delay;
                fw6.life=-LIFE*delay;
                fw8.life=-LIFE*delay;
-                
+
                 createStars ();
                 main();
-                
+
             }
             init();
         });
